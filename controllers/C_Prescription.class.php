@@ -595,10 +595,10 @@ class C_Prescription extends Controller {
 	        echo (" height: 668pt;\n");
                 echo ("}\n");
                 echo ("div.scriptdiv {\n");
-	        echo (" padding-top: 12pt;\n");
-	        echo (" padding-bottom: 22pt;\n");
+	        echo (" padding-top: 0pt;\n");
+	        echo (" padding-bottom: 0pt;\n");
 	        echo (" padding-left: 35pt;\n");
-	        echo (" border-bottom:1pt solid black;\n");
+	        echo (" border-bottom:0pt solid black;\n");
 	        echo ("}\n");
 	        echo ("div.signdiv {\n");
 	        echo (" margin-top: 40pt;\n");
@@ -815,7 +815,7 @@ class C_Prescription extends Controller {
 			if ($on_this_page == 0) {
 				$this->multiprint_header($pdf, $p);
 			}
-			if (++$on_this_page > 3 || $p->provider->id != $this->providerid) {
+			if (++$on_this_page > 8 || $p->provider->id != $this->providerid) {
 				$this->multiprint_footer($pdf);
 				$pdf->ezNewPage();
 				$this->multiprint_header($pdf, $p);
@@ -890,7 +890,7 @@ class C_Prescription extends Controller {
             if ($on_this_page == 0) {
               $this->multiprintcss_header($p);
             }
-            if (++$on_this_page > 3 || $p->provider->id != $this->providerid) {
+            if (++$on_this_page > 8 || $p->provider->id != $this->providerid) {
               $this->multiprintcss_footer();
               $this->multiprintcss_header($p);
               $on_this_page = 1;
